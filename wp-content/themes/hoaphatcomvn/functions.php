@@ -4,6 +4,7 @@ define('THEME_URL', get_stylesheet_directory());
 define('URL_CORE', THEME_URL . "/core");
 require_once(URL_CORE . "/init.php");
 
+define("URL", "http://localhost/local_hoaphatcomvn");
 define("URL_THEME", get_template_directory_uri());
 define("URL_CSS", get_template_directory_uri() . "/css");
 define("URL_JS", get_template_directory_uri() . "/js");
@@ -97,3 +98,36 @@ function wptuts_scripts_with_the_lot(){
 
 }
 add_action('wp_enqueue_scripts', 'wptuts_scripts_with_the_lot' );
+
+
+function get_page_name(){
+	$arr = array(
+		"gioi-thieu",
+		"san-pham",
+		"chat-luong-hoa-phat",
+		"quan-he-co-dong/cong-bo-thong-tin",
+		"quan-he-co-dong/bao-cao-tai-chinh",
+		"quan-he-co-dong/bao-cao-thuong-nien",
+		"quan-he-co-dong/dai-hoi-co-dong",
+		"quan-he-co-dong/van-ban-phap-ly",
+		"quan-he-co-dong/cao-bach",
+		"quan-he-co-dong/tro-giup-co-dong",
+		"tin-tuc/tin-tuc-tap-doan",
+		"tin-tuc/bao-chi-viet-ve-hoa-phat",
+		"tuyen-dung",
+		"lien-he"
+	);
+
+	$i = 0;
+	$check = false;
+	foreach ($arr as $value) {
+		if (is_page($value)) {
+			if(strpos($value, '/')) get_template_part('template/page', explode("/", $value)[$i + 1]);
+			else get_template_part('template/page', $value);
+			$check = true;
+			break;
+		} 
+	}
+
+	if($check == false) the_content();
+}

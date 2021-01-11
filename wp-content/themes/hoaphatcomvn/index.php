@@ -79,27 +79,28 @@
 		  <div class="bottom-right animated lightGallery-video" data-animate="fadeInRight">
 			<a href="https://youtu.be/l4YVU1t-Mxo" >
 			  <img src="https://sudospaces.com/hoaphat-com-vn/2019/08/112-1.jpg">
-			  <img class="play-video" src="/assets/images/play-video.png">
+			  <img class="play-video" src="<?php echo URL_IMAGES . "/play-video.png"; ?>">
+			  <?php echo URL_IMAGES . "/play-video.png"; ?>
 			</a>
 			<a href=" https://www.youtube.com/watch?v=yX8eyLKmlHI&feature=youtu.be" style="display:none">
 			  <img src="https://sudospaces.com/hoaphat-com-vn/2019/08/112-1.jpg">
-			  <img class="play-video" src="/assets/images/play-video.png">
+			  <img class="play-video" src="<?php echo URL_IMAGES . "/play-video.png"; ?>">
 			</a>
 			<a href=" https://www.youtube.com/watch?v=pb1P4dMgN0I" style="display:none">
 			  <img src="https://sudospaces.com/hoaphat-com-vn/2019/08/112-1.jpg">
-			  <img class="play-video" src="/assets/images/play-video.png">
+			  <img class="play-video" src="<?php echo URL_IMAGES . "/play-video.png"; ?>">
 			</a>
 			<a href=" https://www.youtube.com/watch?v=72vwCWQz2Zs" style="display:none">
 			  <img src="https://sudospaces.com/hoaphat-com-vn/2019/08/112-1.jpg">
-			  <img class="play-video" src="/assets/images/play-video.png">
+			  <img class="play-video" src="<?php echo URL_IMAGES . "/play-video.png"; ?>">
 			</a>
 			<a href=" https://www.youtube.com/watch?v=D6o2WyraEIQ" style="display:none">
 			  <img src="https://sudospaces.com/hoaphat-com-vn/2019/08/112-1.jpg">
-			  <img class="play-video" src="/assets/images/play-video.png">
+			  <img class="play-video" src="<?php echo URL_IMAGES . "/play-video.png"; ?>">
 			</a>
 			<a href=" https://www.youtube.com/watch?v=L0c0goiNR3U" style="display:none">
 			  <img src="https://sudospaces.com/hoaphat-com-vn/2019/08/112-1.jpg">
-			  <img class="play-video" src="/assets/images/play-video.png">
+			  <img class="play-video" src="<?php echo URL_IMAGES . "/play-video.png"; ?>">
 			</a>
 		  </div>
 		</div>

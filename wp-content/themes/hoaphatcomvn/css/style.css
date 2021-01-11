@@ -600,7 +600,7 @@ textarea{
     line-height: 20px;
 }
 #news-event .left li::before {
-    content: "â€¢";
+    content: "•";
     position: absolute;
     font-size: 20px;
     color: #333;
@@ -1937,7 +1937,7 @@ textarea{
     padding-left: 20px;
 }
 .tech-item li:nth-child(n+2):before {
-    content: "â€¢";
+    content: "•";
     position: absolute;
     font-size: 25px;
     color: #333;

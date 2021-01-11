@@ -1,5 +1,5 @@
   <div id="footer" class="default">
-    <img class="background-left" src="/assets/images/background_footer_left.png" alt="">
+    <img class="background-left" src="<?php echo URL_IMAGES . "/background_footer_left.png"; ?>" alt="">
     <div class="wrap">
 	  <div class="col col1">
 		<a href=""><i class="icon-hoaphat icon-logo-footer"></i></a>
@@ -46,7 +46,7 @@
 		</ul>
 	  </div>
     </div>
-    <img class="background-right" src="/assets/images/background_footer_right.png" alt="">
+    <img class="background-right" src="<?php echo URL_IMAGES . "/background_footer_right.png"; ?>" alt="">
   </div>
   <div id="footer-bottom" class="default">
 	<div class="wrap">
