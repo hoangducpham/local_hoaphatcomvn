@@ -8,10 +8,7 @@
   <!-- Load CSS, JS -->
   <?php wp_head(); ?>
   <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
-  <title>Tập đoàn Hòa Phát - HPG Group</title>
   <meta name="description" content="Website chính thức của tập đoàn Hòa Phát"/>
-  <link rel="canonical" href="https://www.hoaphat.com.vn" />
-  <link rel="alternate" hreflang="en" href="https://www.hoaphat.com.vn/en" />
 </head>
 <body>
 <div id="header" class="default">
@@ -87,10 +84,10 @@
 			</ul>
 		  </li>
 		  <li>
-			<a href="./tin-tuc/tin-tuc-tap-doan">Tin tức</a>
+			<a href="./category/tin-tuc">Tin tức</a>
 			<ul class="sub-menu">
-			  <li><a href="./tin-tuc/tin-tuc-tap-doan">Tin tức tập đoàn</a></li>
-			  <li><a href="./tin-tuc/bao-chi-viet-ve-hoa-phat">Báo chí viết về Hòa Phát</a></li>
+			  <li><a href="">Tin tức tập đoàn</a></li>
+			  <li><a href="">Báo chí viết về Hòa Phát</a></li>
 			</ul>
 		  </li>
 		  <li><a href="./tuyen-dung"> Tuyển dụng</a></li>
@@ -151,10 +148,10 @@
 			</ul>
 		  </li>
 		  <li style="padding-top:4px;">
-			<a href="./tin-tuc/tin-tuc-tap-doan">Tin tức</a>
+			<a href="">Tin tức</a>
 			<ul class="sub-menu">
-			  <li><a href="./tin-tuc/tin-tuc-tap-doan">Tin tức tập đoàn</a></li>
-			  <li><a href="./tin-tuc/bao-chi-viet-ve-hoa-phat">Báo chí viết về Hòa Phát</a></li>
+			  <li><a href="">Tin tức tập đoàn</a></li>
+			  <li><a href="">Báo chí viết về Hòa Phát</a></li>
 			</ul>
 		  </li>
 		  <li style="padding-top:4px;"><a href="./tuyen-dung"> Tuyển dụng</a></li>

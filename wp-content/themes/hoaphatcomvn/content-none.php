@@ -1,0 +1,1 @@
+<h1>THIS IS content-none.php</h1>

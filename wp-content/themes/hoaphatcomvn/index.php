@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 
   <!-- Slide -->
-  <?php require_once("slide.php"); ?>
+  <?php require_once("templates/slide.php"); ?>
 
   <div id="news-event" class="default">
 	<div class="wrap">
