@@ -60,11 +60,3 @@
     
 <!-- Footer -->
 <?php get_footer(); ?>
-
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-160855559-1');
-</script>

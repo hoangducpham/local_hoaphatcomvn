@@ -14,7 +14,6 @@ define("URL_IMAGES", get_template_directory_uri() . "/images");
 define("URL_LIBS_", get_template_directory_uri() . "/libs/lightgallery");
 define("VERSION", '05012021');
 
-
 // Khai bao chuc nang cua theme
 if (!function_exists('hoaphatcomvn_theme_setup')) {
 	function hoaphatcomvn_theme_setup(){
@@ -48,6 +47,8 @@ if (!function_exists('hoaphatcomvn_theme_setup')) {
 			'class' => 'main-sidebar'
 		);
 		register_sidebar($sidebar);
+
+		//require_once (dirname(__FILE__) . '/sample/sample-config.php');
 	}
 	add_action('init', 'hoaphatcomvn_theme_setup');
 }
@@ -84,14 +85,27 @@ function wptuts_scripts_with_the_lot(){
 
     // In folder js
 	$js_file = array(
-		"jquery.min",
-		"jquery.fancybox",
-    	"owl.carousel",
-    	"script"
+		"local_jquery" => "jquery.min",
+		"jquery_fancybox" => "jquery.fancybox",
+		"owl_carousel" => "owl.carousel",
+		"script_js" => "script",
+		"contact" => "contact"
     );
-    foreach ($js_file as $value) {
-    	wp_enqueue_script($value, URL_JS . "/" . $value . '.js', VERSION, false);
+    foreach ($js_file as $key => $value) {
+    	wp_enqueue_script($key, URL_JS . "/" . $value . '.js', VERSION, false);
     }
+
+    // if (is_page('lien-he')) {
+    // 	wp_enqueue_script('contact', URL_JS . "/" .  'contact.js', VERSION, false);
+    // }
+
+    $ajaxSite = array(
+        "siteurl" => get_bloginfo("url"),
+        "tempurl" => get_bloginfo("template_directory"),
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'ajaxnonce' => wp_create_nonce('ajax-nonce')
+    );
+    wp_localize_script('local_jquery', 'myAjax', $ajaxSite );
 
     // In folder libs/lightgallery
     wp_enqueue_style("lightgallery.min", URL_LIBS_ . "/lightgallery.min.css", VERSION, false);
@@ -107,10 +121,6 @@ function get_page_name(){
 		"van-hoa-doanh-nghiep",
 		"san-pham",
 		"chat-luong-hoa-phat",
-		"cong-nghe",
-		"cong-nghe/cong-nghe-san-xuat",
-		"cong-nghe/sang-kien-cai-tien",
-		"cong-nghe/bao-ve-moi-truong",
 		"quan-he-co-dong/cong-bo-thong-tin",
 		"quan-he-co-dong/bao-cao-tai-chinh",
 		"quan-he-co-dong/bao-cao-thuong-nien",
@@ -180,17 +190,18 @@ function Generate_Featured_Image($image_url, $post_id){
 
 function add_crawl_data(){
 	if (!is_admin() && isset($_GET['act']) && $_GET['act']=='crawl'){
-		require_once('core/crawler-TinTucHoaPhat.php');
+		require_once('core/crawler.php');
 		$crawler = new Crawler_HoaPhat();
-		$url = "https://www.hoaphat.com.vn/tin-tuc";
+		$url = "https://www.hoaphat.com.vn/cong-nghe";
 		$start = 1;
-		$end = 20;
+		$end = 3;
 		$list_post = $crawler->crawl($url, $start, $end);
 
 		if ( !function_exists('post_exists') ) {
 		    require_once( ABSPATH . 'wp-admin/includes/post.php' );
 		}
 
+		$i = 0;
 		if (!empty($list_post)){
 		  	foreach ($list_post as $post){
 		    	if (post_exists($post['title']) === 0){
@@ -206,10 +217,13 @@ function add_crawl_data(){
 					$post_id = wp_insert_post($args);
 
 					if ($post_id > 0){
-						wp_set_post_terms($post_id, 1, 'category');
+						wp_set_post_terms($post_id, 16, 'category');
 						Generate_Featured_Image($post['featured_image'], $post_id);
+						echo $i;
 					}
+
 				}
+				$i++;
 		   	}
 		}
 		die();
@@ -290,4 +304,87 @@ function page_nav() {
 
 	echo '</ul>' . "\n";
 
+}
+
+// Cau hinh mail
+add_action( 'phpmailer_init', 'send_smtp_email' );
+function send_smtp_email( $phpmailer ) {
+    $phpmailer->isSMTP();  
+    $phpmailer->Mailer = 'smtp';   
+    $phpmailer->Host = 'smtp.gmail.com';
+    $phpmailer->SMTPAuth = true; // Force it to use Username and Password to authenticate
+    $phpmailer->Port = 587;
+    $phpmailer->Username = 'ducphamsalesforce@gmail.com';
+    $phpmailer->Password = 'ynnlrseecepdegkb';
+    $phpmailer->SMTPSecure = 'TLS';
+}
+
+
+// function send_mail(){
+// 	$to = "ducphamsalesforce@gmail.com";
+// 	$subject = "Email liên hệ đến từ website local_hoaphatcomvn";
+// 	$headers[] = 'Content-Type: text/html; charset=UTF-8';
+// 	$headers[] = 'From: hoaphat.com <emailtest@gmail.com>';
+// 	$headers[] = 'Reply-to: hoaphatcomvn@gmail.com';
+// 	$body = "Body here";
+
+// 	wp_mail($to, $subject, $body, $headers);
+// }
+// add_action("wp_ajax_send_mail", "send_mail");
+// add_action("wp_ajax_nopriv_send_mail", "send_mail");
+
+
+add_action('wp_ajax_enquiry', 'send_mail');
+add_action('wp_ajax_nopriv_enquiry', 'send_mail');
+function send_mail(){
+  if(!wp_verify_nonce( $_POST['nonce'], 'ajax-nonce')){
+    wp_send_json_error('Nonce is incorrect', 401);
+    die();
+  }
+  $formdata = [];
+  wp_parse_str($_POST['send_mail'], $formdata);
+  // email send
+  $to = "ducphamsalesforce@gmail.com";
+	$subject = "Email liên hệ đến từ website local_hoaphatcomvn";
+	$headers[] = 'Content-Type: text/html; charset=UTF-8';
+	$headers[] = 'From: hoaphat.com <emailtest@gmail.com>';
+	$headers[] = 'Reply-to: hoaphatcomvn@gmail.com';
+	$body = "Body here";
+
+  try {
+    if(wp_mail($to, $subject, $body, $headers) ){
+      wp_send_json_success('Email sent');
+    }
+    else {
+      wp_send_json_error('Email error');
+    }
+  } catch (Exception $e){
+    wp_send_json_error($e->getMessage());
+  }
+}
+
+
+
+
+/*
+if( isset($_POST['submit']) ){
+	$name = $_POST['name']; 
+	$address = $_POST['address'];
+	$email = $_POST['email'];
+	$phone = $_POST['phone'];
+	$content = $_POST['content'];
+
+
+	$headers[] = 'Content-Type: text/html; charset=UTF-8';
+  	$headers[] = 'From: hoaphat.com <emailtest@gmail.com>';
+  	$headers[] = 'Reply-to: hoaphatcomvn@gmail.com';
+	$to = "ducphamsalesforce@gmail.com";
+	$subject = "Email liên hệ đến từ website local_hoaphatcomvn";
+
+	//  Noi dung
+	$message = "HERE";
+	$message .= "<strong>Họ và tên:</strong> " . $name . "<br />";
+	$message .= "<strong>Email:</strong> " . $email . "<br />";
+	$message .= "<strong>Số điện thoại:</strong> " . $phone . "<br />";
+	$message .= "<br />" . $content;
 }

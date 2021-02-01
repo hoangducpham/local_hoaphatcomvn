@@ -1,5 +1,6 @@
+<?php global $hp_options; ?>
 <div id="banner-product" class="default">
-	<img src="https://sudospaces.com/hoaphat-com-vn/2019/12/hinh-anh-cho-website-18.jpg" onerror="this.src='https://sudospaces.com/hoaphat-com-vn/2019/08/banner-2-1.png'" alt="">
+	<img src="<?php echo $hp_options['opt-image-page-lienhe']['url']; ?>">
 	<div class="wrap">
 		<h3>Liên hệ</h3>		
 	</div>
@@ -30,25 +31,30 @@
 			</div>
 			<div class="right">
 				<div class="title-contact">Gửi yêu cầu</div>
-				<form action="" method="post" id="form-contacts" onsubmit="validateFormContacts();return false;">
-					<input type="hidden" name="_token" value="odceozqyolFjRkgXc0d7TpZwdNHWUwakdf4lGRck">						<div class="form-inline">
+				<form action="" method="post" id="form-contacts">
+				
+					<div class="form-inline">
 						<p class="error" style="padding-bottom: 10px;color: red;"></p>
-						<input type="text" name="name" placeholder="Họ và tên (*)">
+						<input type="text" id="name" name="name" placeholder="Họ và tên (*)">
 					</div>
 					<div class="form-inline">
-						<input type="text" name="address" placeholder="Địa chỉ">
+						<input type="text" id="address" name="address" placeholder="Địa chỉ">
 					</div>
 					<div class="form-inline">
-						<input type="text" name="email" placeholder="Email (*)">
-						<input type="number" name="phone" placeholder="Số điện thoại (*)">
+						<input type="text" id="email" name="email" placeholder="Email (*)">
+						<input type="number" id="phone" name="phone" placeholder="Số điện thoại (*)">
 					</div>
 					<div class="form-inline">
-						<textarea name="content" placeholder="Nội dung (*)"></textarea>
+						<textarea id="content" name="content" placeholder="Nội dung (*)"></textarea>
 					</div>
-					<div class="form-inline">
-						<input type="submit" name="submit" value="Gửi thông tin">
-					</div>
+					<input type="submit" class="blue button radius form__submit_contact--tooth" value="Đặt lịch bác sĩ" name="submit" id="submit">
 				</form>
+				<div id="noti-success" class="alert alert-success" style="display:none">
+    				<strong>Gửi thành công!</strong> Chúng tôi sẽ phản hồi nhanh nhất có thể.
+  				</div>
+  				<div id="noti-fail" class="alert alert-danger" style="display:none">
+    				<strong>Gửi thất bại!</strong> Vui lòng thử lại sau.
+  				</div>
 			</div>
 		</div>
 	</div>

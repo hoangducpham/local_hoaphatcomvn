@@ -1,8 +1,3 @@
-$.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
 function isEmail(email) {
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(email);
@@ -11,38 +6,88 @@ function isPhone(phone) {
     var regex = /^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/;
     return regex.test(phone);
 }
-function validateFormContacts(){
-	var name = $('#contacts input[name="name"]').val();
-	var email = $('#contacts input[name="email"]').val();
-	var phone = $('#contacts input[name="phone"]').val();
-	var content = $('#contacts textarea[name="content"]').val();
-	$('#contacts input').removeClass('error');
-	$('#contacts textarea').removeClass('error');
-	$('#contacts .right p.error').html('');
-	if(name == ''){
-		$('#contacts input[name="name"]').addClass('error');
-	}
-	if(email == ''){
-		$('#contacts input[name="email"]').addClass('error');
-	}
-	if(phone == ''){
-		$('#contacts input[name="phone"]').addClass('error');
-	}
-	if(content == ''){
-		$('#contacts textarea[name="content"]').addClass('error');
-	}
-	if(name == '' || email == '' || phone =='' || content == ''){
-		$('#contacts p.error').html('Những trường đánh dấu (*) là bắt buộc nhập');
-	}else if(!isEmail(email)){
-		$('#contacts p.error').html('Nhập sai định dạng email');
-		$('#contacts input[name="email"]').addClass('error');
-	}else if(!isPhone(phone)){
-		$('#contacts p.error').html('Nhập sai định dạng SĐT');
-		$('#contacts input[name="phone"]').addClass('error');
-	}else{
-		$('#form-contacts').submit();
-	}
-}
+// function validateFormContacts(){
+// 	var name = $('#contacts input[name="name"]').val();
+// 	var email = $('#contacts input[name="email"]').val();
+// 	var phone = $('#contacts input[name="phone"]').val();
+// 	var content = $('#contacts textarea[name="content"]').val();
+// 	$('#contacts input').removeClass('error');
+// 	$('#contacts textarea').removeClass('error');
+// 	$('#contacts .right p.error').html('');
+// 	if(name == ''){
+// 		$('#contacts input[name="name"]').addClass('error');
+// 	}
+// 	if(email == ''){
+// 		$('#contacts input[name="email"]').addClass('error');
+// 	}
+// 	if(phone == ''){
+// 		$('#contacts input[name="phone"]').addClass('error');
+// 	}
+// 	if(content == ''){
+// 		$('#contacts textarea[name="content"]').addClass('error');
+// 	}
+// 	if(name == '' || email == '' || phone =='' || content == ''){
+// 		$('#contacts p.error').html('Những trường đánh dấu (*) là bắt buộc nhập');
+// 	}else if(!isEmail(email)){
+// 		$('#contacts p.error').html('Nhập sai định dạng email');
+// 		$('#contacts input[name="email"]').addClass('error');
+// 	}else if(!isPhone(phone)){
+// 		$('#contacts p.error').html('Nhập sai định dạng SĐT');
+// 		$('#contacts input[name="phone"]').addClass('error');
+// 	}else{
+// 		$('#form-contacts').submit(function(e){
+// 			e.preventDefault();
+// 			var formData = {
+// 				name: jQuery('#name').val(),
+// 				address: jQuery('#address').val(),
+// 				email: jQuery('#email').val(),
+// 				phone: jQuery('#phone').val(),
+// 				content: jQuery('#content').val(),
+// 				action:'send_mail'
+// 			};
+// 			$.ajax({
+// 				type        : 'POST', 
+// 				url         : myAjax.ajaxurl,
+// 				data        : formData,
+// 				dataType    : 'json',
+// 				encode      : true
+// 				success: function(){
+// 					$('#noti-success').show();
+// 				},
+// 				error: function(){
+// 					$('#noti-fail').show();
+// 				}
+// 			})
+// 		});
+// 	}
+// }
+
+// $('#form-contacts').submit(function(e){
+// 	e.preventDefault();
+// 	var formData = {
+// 		name: jQuery('#name').val(),
+// 		address: jQuery('#address').val(),
+// 		email: jQuery('#email').val(),
+// 		phone: jQuery('#phone').val(),
+// 		content: jQuery('#content').val(),
+// 		action: 'send_mail'
+// 	};
+// 	$.ajax({
+// 		type:'POST',
+//             data:formData,
+//             processData: false,
+//             contentType: false,
+// 		success: function(){
+// 			$('#noti-success').show();
+// 		},
+// 		error: function(){
+// 			$('#noti-fail').show();
+// 		}
+// 	})
+// });
+
+
+
 function validateFormSupport(){
 	var name = $('#support input[name="name"]').val();
 	var email = $('#support input[name="email"]').val();

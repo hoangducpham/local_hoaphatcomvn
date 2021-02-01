@@ -20,7 +20,7 @@
 	  <div class="search-social default">
 		<div class="social">
 		  <ul>
-		    <li>
+		    <li >
 		  	  <a href="#"><img style="width:28px; height:28px; border-radius:50%;padding-top:0; float:right;" src="<?php echo URL_IMAGES . "/icon-en.png"; ?>"></a>
 		    </li>
 		    <li class="icon-yt">
@@ -30,12 +30,7 @@
 		    </li>
 		  </ul>
 		</div>
-		<div class="search">
-		  <form action="https://www.hoaphat.com.vn/tim-kiem" method="get" id="search-header">
-			<input type="text" name="keyword">
-			<i class="fa fa-search" aria-hidden="true"></i>
-		  </form>
-		</div>
+		<div class="search"><?php get_search_form(); ?></div>
 	  </div>
 	  <div class="navigation default">
 		<ul>

@@ -1,5 +1,6 @@
+<?php global $hp_options; ?>  
 <div id="banner-product" class="default">
-  <img src="https://sudospaces.com/hoaphat-com-vn/2020/05/banner-trang-gioi-thieu.jpg" onerror="this.src='https://sudospaces.com/hoaphat-com-vn/2019/08/banner-2-1.png'">
+  <img src="<?php echo $hp_options['opt-image-page-gioithieu']['url']; ?>">
   <div class="wrap"><h3>Giới thiệu</h3></div>
 </div>
 <div id="tab-about" class="default">
@@ -19,41 +20,33 @@
 	<div class="left">
 	  <div class="box">
 		<i class="icon-hoaphat icon-nhay"></i>
-		<p>Đối với Hòa Phát, quan trọng là bền vững.</p>
+		<p><?php echo $hp_options['opt-title-block1']; ?></p>
 	  </div>
 	  <div class="content">
-	    <p>Hòa Phát là Tập đoàn sản xuất công nghiệp hàng đầu Việt Nam. Khởi đầu từ một Công ty chuyên buôn bán các loại máy xây dựng từ tháng 8/1992, Hòa Phát lần lượt mở rộng sang các lĩnh vực khác như Nội thất, ống thép, thép xây dựng, điện lạnh, bất động sản và nông nghiệp. Ngày 15/11/2007, Hòa Phát chính thức niêm yết cổ phiếu trên thị trường chứng khoán Việt Nam với mã chứng khoán HPG. </p>
-	    <p>Hiện nay, Tập đoàn Hòa Phát có 11 Công ty thành viên khoảng 20.000 CBCNV, hoạt động trải rộng trên phạm vi cả nước và 01 văn phòng tại Singapore. Sản xuất thép là lĩnh vực cốt lõi chiếm tỷ trọng trên 80% doanh thu và lợi nhuận toàn Tập đoàn. Các sản phẩm chính trong chuỗi sản xuất thép của Hòa Phát bao gồm thép xây dựng, thép cuộn cán nóng (HRC), thép dự ứng lực, thép rút dây, ống thép và tôn mạ màu các loại. Với công suất lên đến trên 7 triệu tấn thép các loại, Tập đoàn Hòa Phát là doanh nghiệp sản xuất thép xây dựng và ống thép lớn nhất Việt Nam với thị phần lần lượt là 25% và 30%. Nội thất Hòa Phát dẫn đầu thị phần đối với nội thất văn phòng.</p>
+	    <p><?php echo $hp_options['opt-paragraph1-block1']; ?></p>
+	    <p><?php echo $hp_options['opt-paragraph2-block1']; ?></p>
 	    <p></p>
-	    <p>Trong nhiều năm liền, Hòa Phát được công nhận là Thương hiệu Quốc gia, nằm trong Top 50 doanh nghiệp lớn nhất và hiệu quả nhất Việt Nam; Top 10 Công ty tư nhân lớn nhất Việt Nam, Top 50 Thương hiệu giá trị nhất Việt Nam… Với triết lý kinh doanh “Hòa hợp cùng phát triển”, Hòa Phát dành ngân sách hàng chục tỷ đồng mỗi năm để thực hiện trách nhiệm xã hội của doanh nghiệp với cộng đồng.</p>
+	    <p><?php echo $hp_options['opt-paragraph3-block1']; ?></p>
 	  </div>
 	</div>
 	<div class="right">
-	  <img src="https://sudospaces.com/hoaphat-com-vn/2019/08/img-chu-tich.png">
-	  <p>Chủ tịch hội đồng quản trị</p>
-	  <p><strong>Trần Đình Long</strong></p>
+	  <img src="<?php echo $hp_options['opt-image-block1']['url']; ?>">
+	  <p><?php echo $hp_options['opt-image-description-block1']; ?></p>
 	</div>
   </div>
 </div>
 
 <div id="mission" class="default">
   <div class="wrap">
-	<div class="item animated" data-animate="fadeInLeft">
-	  <p class="title"><i class="icon-hoaphat icon-next"></i>Tầm nhìn</p>
-	  <p>Trở thành Tập Đoàn sản xuất công nghiệp với chất lượng dẫn đầu, trong đó Thép là lĩnh vực cốt lõi</p>
-	</div>
-	<div class="item animated" data-animate="fadeInRight">
-	  <p class="title"><i class="icon-hoaphat icon-next"></i>Sứ mệnh</p>
-	  <p>Cung cấp sản phẩm dẫn đầu, góp phần nâng cao chất lượng cuộc sống, đạt được sự tin yêu của khách hàng.</p>
-	</div>
-	<div class="item animated" data-animate="fadeInLeft">
-	  <p class="title"><i class="icon-hoaphat icon-next"></i>Định vị</p>
-	  <p>Tập Đoàn Hòa Phát - Thương hiệu Việt Nam - Đẳng cấp toàn cầu</p>
-	</div>
-	<div class="item animated" data-animate="fadeInLeft">
-	  <p class="title"><i class="icon-hoaphat icon-next"></i>Giá trị cốt lõi</p>
-	  <p>Giá trị cốt lõi của Tập đoàn Hòa Phát là triết lý Hòa hợp cùng Phát triển. Điều này thể hiện trong mối quan hệ giữa các cán bộ công nhân viên, giữa Tập đoàn và đối tác, đại lý, cổ đông và cộng đồng xã hội, đảm bảo hài hòa lợi ích của các bên liên quan trên cùng một con thuyền, hướng tới sự phát triển bền vững. Đặc biệt, Tập đoàn Hòa Phát đã xây dựng được mối quan hệ đối tác bền vững, lâu dài, tin tưởng như người một nhà với các đại lý bán hàng song hành cùng Tập đoàn từ những ngày đầu thành lập.</p>
-	</div>
+  	<?php
+  	  $i = 0;
+  	  while ( !empty($hp_options['opt-title-block2'][$i]) && !empty($hp_options['opt-content-block2'][$i]) ) { ?>
+  		<div class="item animated" data-animate="fadeInLeft">
+	 	  <p class="title"><i class="icon-hoaphat icon-next"></i><?php echo $hp_options['opt-title-block2'][$i]; ?></p>
+	 	  <p><?php echo $hp_options['opt-content-block2'][$i]; ?></p>
+		</div>
+  	  <?php $i++;}
+  	?>
   </div>
 </div>
 
@@ -87,7 +80,7 @@
 	  <div style="width:calc(100% / 16)" class="item item-5" data-id="5"><a href="javascript:;">1992</a></div>
 	  <div style="width:calc(100% / 16)" class="item item-6" data-id="6"><a href="javascript:;">1995</a></div>
 	  <div style="width:calc(100% / 16)" class="item item-10" data-id="10"><a href="javascript:;">1996</a></div>
-	  <div style="width:calc(100% / 16)" class="item item-9" data-id="9"><a href="javascript:;">2000</a></div>
+	  <div style="width:calc(100% / 16)" class="item item-9" data-id="9"><a href="javascript:;">2000</a></div> 
 	  <div style="width:calc(100% / 16)" class="item item-11" data-id="11"><a href="javascript:;">2001</a></div>
 	  <div style="width:calc(100% / 16)" class="item item-12" data-id="12"><a href="javascript:;">2004</a></div>
 	  <div style="width:calc(100% / 16)" class="item item-13" data-id="13"><a href="javascript:;">2007</a></div>
@@ -117,59 +110,22 @@
 
 <div id="company-members" class="default">
   <div class="wrap">
-	<div class="title-news-event">Công ty thành viên</div>
+	<div class="title-news-event"><?php echo $hp_options['opt-title-block3']; ?></div>
 	<div class="content default animated" data-animate="fadeInUp">
-	  <ul>
-		<li>
-		  <a href="https://www.hoaphat.com.vn/cong-ty-thanh-vien/cong-ty-tnhh-thep-hoa-phat-hung-yen.html">
-			<div class="image">
-			  <img src="https://sudospaces.com/hoaphat-com-vn/2019/08/anh2-1-large.jpg">
-			  <h3><a href="https://www.hoaphat.com.vn/cong-ty-thanh-vien/cong-ty-tnhh-thep-hoa-phat-hung-yen.html">Công ty TNHH Thép Hòa Phát Hưng Yên</a></h3>
-			</div>
-		  </a>
-		</li>
-		<li>
-		  <a href="https://www.hoaphat.com.vn/cong-ty-thanh-vien/cong-ty-co-phan-thep-hoa-phat-hai-duong.html">
-			<div class="image">
-			  <img src="https://sudospaces.com/hoaphat-com-vn/2019/08/toan-canh-khu-lien-hop-gang-thep-hoa-phat-1-768x501-large.jpg">
-			  <h3><a href="https://www.hoaphat.com.vn/cong-ty-thanh-vien/cong-ty-co-phan-thep-hoa-phat-hai-duong.html">Công ty CP Thép Hòa Phát Hải Dương</a></h3>
-			</div>
-		  </a>
-		</li>
-		<li>
-		  <a href="https://www.hoaphat.com.vn/cong-ty-thanh-vien/cong-ty-co-phan-thep-hoa-phat-dung-quat.html">
-			<div class="image">
-			  <img src="https://sudospaces.com/hoaphat-com-vn/2019/08/56575880-422352251662308-7677965339723825152-n-1500x695-large.jpg">
-			  <h3><a href="https://www.hoaphat.com.vn/cong-ty-thanh-vien/cong-ty-co-phan-thep-hoa-phat-dung-quat.html">Công ty CP Thép Hòa Phát Dung Quất</a></h3>
-			</div>
-		  </a>
-		</li>
-		<li>
-		  <a href="https://www.hoaphat.com.vn/cong-ty-thanh-vien/cong-ty-tnhh-che-tao-kim-loai-hoa-phat.html">
-			<div class="image">
-			  <img src="https://sudospaces.com/hoaphat-com-vn/2020/11/che-tao-kim-loai-cap-thep-2-large.jpg">
-			  <h3><a href="https://www.hoaphat.com.vn/cong-ty-thanh-vien/cong-ty-tnhh-che-tao-kim-loai-hoa-phat.html">Công ty TNHH Chế tạo kim loại Hòa Phát</a></h3>
-			</div>
-		  </a>
-		</li>
-		<li>
-		  <a href="https://www.hoaphat.com.vn/cong-ty-thanh-vien/cong-ty-co-phan-dau-tu-khoang-san-an-thong.html">
-			<div class="image">
-			  <img src="https://sudospaces.com/hoaphat-com-vn/2019/08/1269-1-slider-250x140-large.jpg">
-			  <h3><a href="https://www.hoaphat.com.vn/cong-ty-thanh-vien/cong-ty-co-phan-dau-tu-khoang-san-an-thong.html">Công ty CP Đầu tư khoáng sản An Thông</a></h3>
-			</div>
-		  </a>
-		</li>
-		<li>
-		  <a href="https://www.hoaphat.com.vn/cong-ty-thanh-vien/cong-ty-tnhh-o-ng-thep-hoa-phat.html">
-			<div class="image">
-			  <img src="https://sudospaces.com/hoaphat-com-vn/2019/09/z1539630768860-184a42fe9bc0863cf66f0aefb3b12434-large.jpg">
-			  <h3><a href="https://www.hoaphat.com.vn/cong-ty-thanh-vien/cong-ty-tnhh-o-ng-thep-hoa-phat.html">Công ty TNHH Ống thép Hòa Phát</a></h3>
-			</div>
-		  </a>
-		</li>
+	  <ul id="list-company-members">
+	  	<?php
+	  	  $i = 0;
+	  	  while ( !empty($hp_options['opt-imagelink-block3'][$i]) && !empty($hp_options['opt-description-block3'][$i]) ) { ?>
+	  	  	<li style="display: none;">
+	  	  	  <div class="image">
+  	  			<img src="<?php echo $hp_options['opt-imagelink-block3'][$i]; ?>">
+  	  			<h3><a><?php echo $hp_options['opt-description-block3'][$i]; ?></a></h3>
+	  	  	  </div>
+	  	  	</li>
+	  	  <?php $i++;}
+	  	?>
 	  </ul>
-	  <p class="show-more" data-page="2"><a href="javascript:;">Xem thêm <i class="fa fa-caret-right" aria-hidden="true"></i></a></p>
+	  <p class="show-more" id="loadMore"><a href="javascript:;">Xem thêm <i class="fa fa-caret-right" aria-hidden="true"></i></a></p>
 	</div>
   </div>
 </div>
@@ -197,8 +153,7 @@
 		<div class="box-said">
 		  <a href="/tin-tuc/ceo-hoa-phat-moi-ngay-chung-toi-lam-duoc-1-trieu-usd.html" title="">
 			<p class="content-said">"Mỗi ngày, chúng tôi làm được 1 triệu USD"</p>
-			<p class="name">-Ông Trần Tuấn Dương-
-			</p>
+			<p class="name">-Ông Trần Tuấn Dương-</p>
 			<p class="name">Phó Chủ tịch HĐQT kiêm Tổng Giám đốc Công ty Cổ phần Tập Đoàn Hòa Phát</p>
 		  </a>
 		</div>
@@ -319,6 +274,14 @@
 					}
 				}
 			});
+		});
+
+		size_li = $("#list-company-members li").size();
+		x=6;
+		$('#list-company-members li:lt('+x+')').show();
+		$('#loadMore').click(function () {
+			x= (x+6 <= size_li) ? x+6 : size_li;
+			$('#list-company-members li:lt('+x+')').show();
 		});
 	});
 </script>
